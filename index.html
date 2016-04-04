@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="jquery-ui-1.11.4/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="jquery/jquery-2.1.4.min.js"></script>
+    <script src="jquery-ui-1.11.4/jquery-ui.min.js"></script>
+    <script src="tetris_grid.js"></script>
+    <script src="tetris_game.js"></script>
+
+</head>
+<body >
+    <div id="container">
+        <div id="headbox"><span id="game_title">Game: Tetris</span></div>
+        <div id="sidebar_left">
+            <div id="overmessage" title="message" style="display:none;"></div>
+            <div id="login" class="login_msg"  title="message" style="display:none;">
+                Username:<input type="text" id="uname"></input><br>
+				Eneter your name, we can record your highest score~
+            </div>
+            <div id="login" title="input username" style="display:none;"></div>
+            <span id="hint">
+                Usage:
+                <ul>
+                <li>'↑': rotate the block</li>
+                <li>'←': move the block left</li>
+                <li>'→': move the block right</li>
+                <li>'↓': accelerate the speed of block failing</li>
+                <li>space bar: pause game</li>
+                </ul>
+            </span>
+            <button  class="start_button"   onclick="main()">Start</button>
+            <button  class="random_button"  onclick="randomize_map()">Random Map</button>
+            <button  class="danger_button"   onclick="active_danger()">Danger</button>
+            <button  class="clear_button"   onclick="clear_map()">Clear (RESET)</button>
+            <!--<button  class="clear_button"   onclick="game_over()">TEST</button>-->
+        </div>
+        <div id="sidebody">
+            <canvas id="game" width="375" height="750"  style="border:#999 15px ridge;text-shadow:2px 3px 1px #0f0;"></canvas>
+        </div>
+        <div id="sidebar_right">
+            <span id="game_info">
+            <ul>
+			<li>Hi! <span id="user">Anonymous user</span></li>
+            <li>Best Score:<span id="bscore"></span></li>
+			<li>Score: <span id="score">0</span></li>
+            <li>#Remove Line: <span id="line">0</span></li>
+            <li>Elapsed Time: <span id="time">0</span> s</li>
+            </ul>
+            </span>
+        </div>
+        <div id="clear"></div>
+        <div id="footer">Javascript term project Author:hhchung Student ID:0116327</div>
+    </div>
+</body>
+</html>
